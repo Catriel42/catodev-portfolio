@@ -22,7 +22,7 @@ export class Data {
       tags: ['Angular 21', 'Tailwind v4', 'Signals', 'Zoneless'],
       imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
       repoUrl: 'https://github.com/Catriel42/catodev-portfolio',
-      deployUrl: 'https://github.com/Catriel42/catodev-portfolio',
+      deployUrl: 'https://catodev-portfolio.vercel.app',
     }
   ]);
 
