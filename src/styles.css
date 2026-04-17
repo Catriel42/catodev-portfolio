@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  /* Core Palette */
+  --color-zinc-950: #09090b;
+  --color-zinc-900: #18181b;
+  --color-zinc-800: #27272a;
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-300: #d4d4d8;
+  
+  --color-primary: #9333ea;
+  --color-primary-light: #c084fc;
+  
+  /* Semantic Variables */
+  --color-app-bg: var(--color-zinc-950);
+  --color-app-fg: #ffffff;
+  --color-app-border: var(--color-zinc-800);
+  --color-app-card: var(--color-zinc-900);
+  --color-app-muted: #71717a;
+
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Light Theme Overrides */
+:root.light {
+  --color-app-bg: #ffffff;
+  --color-app-fg: var(--color-zinc-950);
+  --color-app-border: var(--color-zinc-200);
+  --color-app-card: var(--color-zinc-100);
+  --color-app-muted: #52525b;
+}
+
+:root {
+  background-color: var(--color-app-bg);
+  color: var(--color-app-fg);
+  font-family: var(--font-mono);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-app-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-app-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
