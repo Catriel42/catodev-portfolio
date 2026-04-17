@@ -1,0 +1,36 @@
+<nav class="fixed top-0 w-full z-50 border-b border-app-border bg-app-bg/80 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-primary rounded shadow-[4px_4px_0px_0px_rgba(147,51,234,0.3)]"></div>
+      <span class="font-bold tracking-tighter text-xl">CATO<span class="text-primary">.DEV</span></span>
+    </div>
+    
+    <div class="flex items-center gap-8 text-sm uppercase tracking-widest font-medium">
+      <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
+      <a href="#experience" class="hover:text-primary transition-colors">Experience</a>
+      <button 
+        (click)="theme.toggle()"
+        class="p-2 border border-app-border hover:border-primary transition-all rounded bg-app-card shadow-[2px_2px_0px_0px_var(--color-app-border)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none">
+        <span class="sr-only">Toggle Theme</span>
+        @if (theme.mode() === 'dark') {
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707"/></svg>
+        } @else {
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        }
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="pt-32 pb-20 px-4 max-w-7xl mx-auto w-full flex-grow">
+  <router-outlet />
+</main>
+
+<footer class="border-t border-app-border py-10 px-4 bg-app-card/50">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <p class="text-app-muted text-sm">© 2026 Catodev Portfolio. Built with Angular 21.</p>
+    <div class="flex gap-4">
+      <!-- Social Links Placeholder -->
+    </div>
+  </div>
+</footer>
