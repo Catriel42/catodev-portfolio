@@ -1,5 +1,5 @@
 import { Injectable, signal, computed } from '@angular/core';
-import { Project, Experience } from './models';
+import { Project, Experience, Article } from './models';
 
 @Injectable({
   providedIn: 'root'
@@ -45,4 +45,20 @@ export class Data {
 
   public readonly projects = this._projects.asReadonly();
   public readonly experience = this._experience.asReadonly();
+
+  private readonly _articles = signal<Article[]>([
+    {
+      id: '1',
+      slug: 'taller-aws-sdk-for-dotnet',
+      title: 'Taller: C#/.NET + AWS SDK for .NET',
+      excerpt: 'Aprende a usar AWS SDK para .NET con foco en Amazon Bedrock.',
+      contentUrl: '/articles-content/taller-aws-sdk-for-dotnet.md',
+      type: 'workshop',
+      date: '2026-09-15',
+      tags: ['C#/.NET', 'AWS SDK', 'Workshop'],
+      imageUrl: '/taller-aws-images/taller-aws-portada.png'
+    }
+  ]);
+
+  public readonly articles = this._articles.asReadonly();
 }

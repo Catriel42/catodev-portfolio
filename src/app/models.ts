@@ -15,3 +15,16 @@ export interface Experience {
   period: string;
   description: string;
 }
+
+export interface Article {
+  id: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  content?: string;
+  contentUrl?: string;
+  type: 'blog' | 'workshop';
+  date: string;
+  tags: string[];
+  imageUrl: string;
+}

@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "highlight.js/styles/github-dark.css";
+@plugin "@tailwindcss/typography";
 
 @theme {
   /* Core Palette */
@@ -8,10 +10,10 @@
   --color-zinc-100: #f4f4f5;
   --color-zinc-200: #e4e4e7;
   --color-zinc-300: #d4d4d8;
-  
+
   --color-primary: #9333ea;
   --color-primary-light: #c084fc;
-  
+
   /* Semantic Variables */
   --color-app-bg: var(--color-zinc-950);
   --color-app-fg: #ffffff;
@@ -58,4 +60,41 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-primary);
+}
+
+/* Markdown Alerts */
+.markdown-alert {
+  padding: 1rem 1rem 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--alert-color);
+  background-color: var(--alert-bg);
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.markdown-alert p {
+  margin: 0 !important;
+}
+
+.markdown-alert-note { --alert-color: #3b82f6; --alert-bg: rgba(59, 130, 246, 0.1); }
+.markdown-alert-tip { --alert-color: #10b981; --alert-bg: rgba(16, 185, 129, 0.1); }
+.markdown-alert-important { --alert-color: #8b5cf6; --alert-bg: rgba(139, 92, 246, 0.1); }
+.markdown-alert-warning { --alert-color: #f59e0b; --alert-bg: rgba(245, 158, 11, 0.1); }
+.markdown-alert-caution { --alert-color: #ef4444; --alert-bg: rgba(239, 68, 68, 0.1); }
+
+.markdown-alert-title {
+  display: flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 800 !important;
+  color: var(--alert-color) !important;
+  margin-bottom: 0.5rem !important;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.markdown-alert-title svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
 }

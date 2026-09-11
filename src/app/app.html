@@ -6,8 +6,9 @@
     </div>
 
     <div class="flex items-center gap-8 text-sm uppercase tracking-widest font-medium text-app-fg">
-      <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
-      <a href="#experience" class="hover:text-primary transition-colors">Experience</a>
+      <a routerLink="/" fragment="projects" class="hover:text-primary transition-colors hidden md:block">Projects</a>
+      <a routerLink="/" fragment="experience" class="hover:text-primary transition-colors hidden md:block">Experience</a>
+      <a routerLink="/articles" class="hover:text-primary transition-colors">Writing</a>
       <button (click)="theme.toggle()"
         class="p-2 border border-app-border hover:border-primary transition-all rounded bg-app-card shadow-[2px_2px_0px_0px_var(--color-app-border)] active:translate-x-1px active:translate-y-1px active:shadow-none flex items-center justify-center">
         <span class="sr-only">Toggle Theme</span>
