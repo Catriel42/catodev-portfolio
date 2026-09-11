@@ -1,11 +1,8 @@
 import { Routes } from '@angular/router';
-import { Home } from './home';
-import { ArticlesList } from './articles/articles-list';
-import { ArticleDetail } from './articles/article-detail';
 
 export const routes: Routes = [
-  { path: '', component: Home },
-  { path: 'articles', component: ArticlesList },
-  { path: 'articles/:slug', component: ArticleDetail },
+  { path: '', loadComponent: () => import('./home').then(m => m.Home) },
+  { path: 'articles', loadComponent: () => import('./articles/articles-list').then(m => m.ArticlesList) },
+  { path: 'articles/:slug', loadComponent: () => import('./articles/article-detail').then(m => m.ArticleDetail) },
   { path: '**', redirectTo: '' }
 ];
