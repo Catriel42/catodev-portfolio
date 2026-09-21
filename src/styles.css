@@ -69,6 +69,41 @@ body {
   background: var(--color-primary);
 }
 
+/* Typography Theme Integration */
+.prose {
+  --tw-prose-body: var(--color-app-fg);
+  --tw-prose-headings: var(--color-app-fg);
+  --tw-prose-lead: var(--color-app-muted);
+  --tw-prose-links: var(--color-primary);
+  --tw-prose-bold: var(--color-app-fg);
+  --tw-prose-counters: var(--color-app-muted);
+  --tw-prose-bullets: var(--color-app-muted);
+  --tw-prose-hr: var(--color-app-border);
+  --tw-prose-quotes: var(--color-app-fg);
+  --tw-prose-quote-borders: var(--color-primary);
+  --tw-prose-captions: var(--color-app-muted);
+  --tw-prose-code: var(--color-primary);
+  --tw-prose-pre-code: var(--color-zinc-100);
+  --tw-prose-pre-bg: var(--color-zinc-900);
+  --tw-prose-th-borders: var(--color-app-border);
+  --tw-prose-td-borders: var(--color-app-border);
+  color: var(--color-app-fg);
+}
+
+.prose :not(pre) > code {
+  background-color: var(--color-app-card);
+  border: 1px solid var(--color-app-border);
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  color: var(--color-primary);
+}
+
+.prose :not(pre) > code::before,
+.prose :not(pre) > code::after {
+  content: "" !important;
+}
+
 /* Markdown Alerts */
 .markdown-alert {
   padding: 1rem 1rem 1rem 1.25rem;

@@ -64,7 +64,7 @@ marked.use(markedAlert());
           </div>
         }
 
-        <div class="prose prose-invert prose-lg max-w-none prose-headings:font-bold prose-a:text-primary hover:prose-a:text-primary-light prose-img:rounded-xl prose-img:border prose-img:border-app-border"
+        <div class="prose prose-lg max-w-none prose-headings:font-bold prose-a:text-primary hover:prose-a:text-primary-light prose-img:rounded-xl prose-img:border prose-img:border-app-border"
              [innerHTML]="htmlContent()">
         </div>
       } @else {
