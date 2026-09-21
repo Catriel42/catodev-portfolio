@@ -1,24 +1,108 @@
-<section class="min-h-[60vh] flex flex-col justify-center gap-6">
+<section class="min-h-[70vh] flex flex-col justify-center py-8 sm:py-12 md:py-20">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+    
+    <!-- Left Column: Personal Brand, Title, Bio & CTAs -->
+    <div class="lg:col-span-7 flex flex-col gap-4 sm:gap-6">
+      <div>
+        <p class="text-primary font-mono text-xs sm:text-sm font-bold uppercase tracking-widest mb-1 sm:mb-2">
+          Catriel Pereira
+        </p>
+        <h1 class="text-3xl sm:text-5xl lg:text-7xl font-black uppercase tracking-tight text-app-fg leading-[1] sm:leading-[0.92]">
+          Full-Stack & <br/>
+          <span class="text-primary">Cloud</span> Systems.
+        </h1>
+      </div>
 
-      <h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] uppercase text-app-fg">
-        Building the <br/>
-        <span class="text-primary italic">next-gen</span> <br/>
-        web experience
-      </h1>
-      
-      <p class="max-w-2xl text-app-muted text-lg leading-relaxed border-l-4 border-app-border pl-6">
-        Full-stack developer specialized in <span class="text-app-fg font-bold">Angular 21</span> and AI integrations. 
-        Focusing on performance, architecture, and high-end design systems.
+      <p class="max-w-xl text-app-muted text-xs sm:text-base md:text-lg leading-relaxed border-l-2 border-primary/60 pl-3.5 sm:pl-5">
+        Commercial Software Engineering student at Jala University and 1st Place Winner at NASA Space Apps Challenge. Focused on scalable distributed architectures, high-performance web applications, and strategic AI integrations.
       </p>
-      
-      <div class="flex flex-wrap gap-4 mt-8">
-        <a href="https://github.com/Catriel42" target="_blank"
-          class="px-8 py-4 bg-primary text-white font-bold uppercase tracking-widest text-sm rounded shadow-[6px_6px_0px_0px_rgba(147,51,234,0.4)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_rgba(147,51,234,0.4)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all inline-block">
-          View Projects
+
+      <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-1 sm:pt-2">
+        <a href="#projects"
+          class="px-5 sm:px-7 py-3 sm:py-3.5 bg-primary text-white font-bold uppercase tracking-widest text-xs rounded shadow-[4px_4px_0px_0px_var(--color-primary-shadow)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_var(--color-primary-shadow)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all inline-flex items-center justify-center gap-2">
+          <span>Explore Projects</span>
+          <svg lucideArrowRight class="w-4 h-4"></svg>
         </a>
-        <a href="https://www.linkedin.com/in/catriel-pereira/" target="_blank"
-          class="px-8 py-4 border border-app-border text-app-fg font-bold uppercase tracking-widest text-sm rounded bg-app-card shadow-[6px_6px_0px_0px_var(--color-app-border)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[4px_4px_0px_0px_var(--color-app-border)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all inline-block">
-          Contact Me
+        <a href="/cv.pdf" download="Catriel_Pereira_CV.pdf" target="_blank"
+          class="px-5 sm:px-7 py-3 sm:py-3.5 border border-app-border text-app-fg font-bold uppercase tracking-widest text-xs rounded bg-app-card shadow-[4px_4px_0px_0px_var(--color-app-border)] hover:border-primary hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_var(--color-app-border)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all inline-flex items-center justify-center gap-2">
+          <svg lucideDownload class="w-4 h-4 text-primary"></svg>
+          <span>Download CV</span>
         </a>
       </div>
-    </section>
+    </div>
+
+    <!-- Right Column: Dev Terminal Window -->
+    <div class="lg:col-span-5 w-full">
+      <div class="bg-app-card border-2 border-app-border rounded-lg overflow-hidden shadow-[4px_4px_0px_0px_var(--color-app-border)] sm:shadow-[8px_8px_0px_0px_var(--color-app-border)] hover:border-primary/50 transition-colors">
+        
+        <!-- Terminal Titlebar -->
+        <div class="bg-app-bg px-3.5 sm:px-4 py-2 sm:py-3 border-b border-app-border flex items-center justify-between text-xs font-mono">
+          <div class="flex items-center gap-1.5 sm:gap-2">
+            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500/80 inline-block"></span>
+            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+            <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+          </div>
+          <span class="text-app-muted text-[10px] sm:text-[11px] font-semibold">catodev ~ zsh</span>
+          <span class="text-primary font-bold text-[10px] sm:text-[11px]">[DEV]</span>
+        </div>
+
+        <!-- Terminal Output -->
+        <div class="p-3.5 sm:p-5 font-mono text-xs space-y-3 sm:space-y-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-primary font-bold">$</span>
+              <span class="text-app-fg font-semibold text-[11px] sm:text-xs">whoami</span>
+            </div>
+            <p class="text-app-muted pl-3 sm:pl-4 mt-1 text-[10px] sm:text-xs">
+              Catriel Pereira &bull; Software Engineer (cato.dev)
+            </p>
+          </div>
+
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-primary font-bold">$</span>
+              <span class="text-app-fg font-semibold text-[11px] sm:text-xs">catodev --stack</span>
+            </div>
+            <div class="pl-3 sm:pl-4 mt-1.5 sm:mt-2 flex flex-wrap gap-1 sm:gap-1.5">
+              <span class="px-1.5 py-0.5 sm:px-2 sm:py-0.5 bg-app-bg border border-app-border rounded text-[9px] sm:text-[10px] font-bold text-primary">Angular</span>
+              <span class="px-1.5 py-0.5 sm:px-2 sm:py-0.5 bg-app-bg border border-app-border rounded text-[9px] sm:text-[10px] font-bold text-app-fg">.NET</span>
+              <span class="px-1.5 py-0.5 sm:px-2 sm:py-0.5 bg-app-bg border border-app-border rounded text-[9px] sm:text-[10px] font-bold text-app-fg">NestJS</span>
+              <span class="px-1.5 py-0.5 sm:px-2 sm:py-0.5 bg-app-bg border border-app-border rounded text-[9px] sm:text-[10px] font-bold text-app-fg">AWS</span>
+              <span class="px-1.5 py-0.5 sm:px-2 sm:py-0.5 bg-app-bg border border-app-border rounded text-[9px] sm:text-[10px] font-bold text-app-fg">PostgreSQL</span>
+              <span class="px-1.5 py-0.5 sm:px-2 sm:py-0.5 bg-app-bg border border-app-border rounded text-[9px] sm:text-[10px] font-bold text-app-fg">Docker</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-primary font-bold">$</span>
+              <span class="text-app-fg font-semibold">catodev --highlights</span>
+            </div>
+            <div class="pl-3 sm:pl-4 mt-1.5 space-y-1.5 text-[10.5px] sm:text-xs leading-snug">
+              <p class="text-emerald-500 font-semibold flex items-center gap-1.5">
+                <span>&#10003;</span>
+                <span>1st Place Winner @ NASA Space Apps 2025</span>
+              </p>
+              <p class="text-app-muted flex items-center gap-1.5">
+                <span>&#10003;</span>
+                <span>Real-Time BattleTanks (SignalR + MQTT)</span>
+              </p>
+              <p class="text-app-muted flex items-center gap-1.5">
+                <span>&#10003;</span>
+                <span>Semathic AI Vector Engine (RAG)</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Active Prompt Line -->
+          <div class="pt-1 text-app-muted flex items-center gap-1.5">
+            <span class="text-primary font-bold">$</span>
+            <span class="w-2 h-4 bg-primary inline-block animate-pulse"></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
