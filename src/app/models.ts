@@ -6,6 +6,7 @@ export interface Project {
   imageUrl: string;
   repoUrl: string;
   deployUrl?: string;
+  areas?: string[];
 }
 
 export interface Experience {
