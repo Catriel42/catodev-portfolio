@@ -31,7 +31,6 @@ export class Data {
       tags: ['Angular', 'FastAPI', 'ChromaDB', 't-SNE', 'RAG'],
       imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800',
       repoUrl: 'https://github.com/Catriel42/semathic-ai',
-      deployUrl: 'https://semathic-ai.vercel.app',
       areas: ['Full-Stack & Web', 'AI & Algorithms']
     },
     {
@@ -74,7 +73,7 @@ export class Data {
     },
     {
       id: '2',
-      company: 'NASA Space Apps Challenge',
+      company: 'NASA Space Apps Challenge Cochabamba 2025',
       role: '1st Place Winner (Team CloudCatchers)',
       period: 'October 2025',
       description: 'Won 1st place in the Cochabamba NASA Space Apps Hackathon with project "WIRA". Developed an intelligent air quality prediction platform integrating NASA TEMPO satellite data with Machine Learning models and an AI-driven chatbot for natural language atmospheric analysis.'
