@@ -67,13 +67,20 @@ export class Data {
   private readonly _experience = signal<Experience[]>([
     {
       id: '1',
+      company: 'AWS AI User Group Bolivia',
+      role: 'Community Leader',
+      period: 'August 2026 - Present',
+      description: 'Leading the official AWS Artificial Intelligence user community in Bolivia. Organizing hands-on technical workshops, tech talks, and fostering knowledge sharing in cloud architectures, Generative AI, and AWS SDK solutions.'
+    },
+    {
+      id: '2',
       company: 'NASA Space Apps Challenge Cochabamba 2025',
       role: '1st Place Winner (Team CloudCatchers)',
       period: 'October 2025',
       description: 'Won 1st place in the Cochabamba NASA Space Apps Hackathon with project "WIRA". Developed an intelligent air quality prediction platform integrating NASA TEMPO satellite data with Machine Learning models and an AI-driven chatbot for natural language atmospheric analysis.'
     },
     {
-      id: '2',
+      id: '3',
       company: 'Jala University',
       role: 'Commercial Software Engineering Student',
       period: '2024 - Present',
