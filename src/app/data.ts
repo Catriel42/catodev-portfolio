@@ -22,6 +22,7 @@ export class Data {
       tags: ['Angular', 'NestJS', 'TypeScript', 'Prisma', 'PostgreSQL', 'Docker'],
       imageUrl: '/projects/event-jalau.png',
       repoUrl: 'https://github.com/Catriel42/events-manager-jalau',
+      deployUrl: 'https://events-jalau.me/events',
       areas: ['Full-Stack & Web', 'Backend & Cloud']
     },
     {
