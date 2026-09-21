@@ -7,18 +7,18 @@ import { ArticleCard } from './article-card';
   selector: 'app-articles-preview',
   imports: [RouterLink, ArticleCard],
   template: `
-    <section id="articles" class="py-20 border-t border-app-border">
-      <div class="flex items-center justify-between mb-12">
-        <div class="flex items-center gap-4 flex-grow">
-          <h2 class="text-4xl font-black uppercase tracking-tighter text-app-fg">Writing & Workshops</h2>
-          <div class="h-[2px] flex-grow bg-app-border mr-4"></div>
+    <section id="articles" class="py-16 sm:py-20 border-t border-app-border">
+      <div class="flex items-center justify-between mb-8 sm:mb-12">
+        <div class="flex items-center gap-3 sm:gap-4 flex-grow">
+          <h2 class="text-2xl sm:text-4xl font-black uppercase tracking-tighter text-app-fg">Writing & Workshops</h2>
+          <div class="h-[2px] flex-grow bg-app-border mr-2 sm:mr-4"></div>
         </div>
         <a routerLink="/articles" class="hidden md:block text-xs font-bold uppercase tracking-widest text-primary hover:text-primary-light transition-colors">
           View All
         </a>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         @for (article of latestArticles(); track article.id) {
           <app-article-card [article]="article" />
         }

@@ -1,34 +1,77 @@
-<nav class="fixed top-0 w-full z-50 border-b border-app-border bg-app-bg/80 backdrop-blur-md">
+<nav class="fixed top-0 w-full z-50 border-b border-app-border bg-app-bg/90 backdrop-blur-md">
   <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-    <div class="flex items-center gap-2">
-      <div class="w-8 h-8 bg-primary rounded shadow-[4px_4px_0px_0px_rgba(147,51,234,0.3)]"></div>
-      <span class="font-bold tracking-tighter text-xl">CATO<span class="text-primary">.DEV</span></span>
-    </div>
+    <a routerLink="/" (click)="closeMobileMenu()" class="flex items-center gap-2 group">
+      <div class="w-8 h-8 bg-primary rounded shadow-[4px_4px_0px_0px_var(--color-primary-shadow)] group-hover:translate-x-[1px] group-hover:translate-y-[1px] transition-transform"></div>
+      <span class="font-bold tracking-tighter text-xl text-app-fg">CATO<span class="text-primary">.DEV</span></span>
+    </a>
 
-    <div class="flex items-center gap-8 text-sm uppercase tracking-widest font-medium text-app-fg">
-      <a routerLink="/" fragment="projects" class="hover:text-primary transition-colors hidden md:block">Projects</a>
-      <a routerLink="/" fragment="experience" class="hover:text-primary transition-colors hidden md:block">Experience</a>
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest font-medium text-app-fg">
+      <a routerLink="/" fragment="projects" class="hover:text-primary transition-colors">Projects</a>
+      <a routerLink="/" fragment="experience" class="hover:text-primary transition-colors">Experience</a>
       <a routerLink="/articles" class="hover:text-primary transition-colors">Writing</a>
       <button (click)="theme.toggle()"
         class="p-2 border border-app-border hover:border-primary transition-all rounded bg-app-card shadow-[2px_2px_0px_0px_var(--color-app-border)] active:translate-x-1px active:translate-y-1px active:shadow-none flex items-center justify-center">
         <span class="sr-only">Toggle Theme</span>
         @if (theme.mode() === 'dark') {
-        <svg lucideSun class="w-4 h-4"></svg>
+          <svg lucideSun class="w-4 h-4"></svg>
         } @else {
-        <svg lucideMoon class="w-4 h-4"></svg>
+          <svg lucideMoon class="w-4 h-4"></svg>
+        }
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Controls -->
+    <div class="flex items-center gap-3 md:hidden">
+      <button (click)="theme.toggle()"
+        class="p-2 border border-app-border hover:border-primary transition-all rounded bg-app-card shadow-[2px_2px_0px_0px_var(--color-app-border)] active:translate-x-1px active:translate-y-1px active:shadow-none flex items-center justify-center text-app-fg">
+        <span class="sr-only">Toggle Theme</span>
+        @if (theme.mode() === 'dark') {
+          <svg lucideSun class="w-4 h-4"></svg>
+        } @else {
+          <svg lucideMoon class="w-4 h-4"></svg>
+        }
+      </button>
+
+      <button (click)="toggleMobileMenu()"
+        type="button"
+        aria-label="Toggle navigation menu"
+        class="p-2 border border-app-border hover:border-primary transition-all rounded bg-app-card shadow-[2px_2px_0px_0px_var(--color-app-border)] active:translate-x-1px active:translate-y-1px active:shadow-none text-app-fg">
+        @if (isMobileMenuOpen()) {
+          <svg lucideX class="w-5 h-5 text-primary"></svg>
+        } @else {
+          <svg lucideMenu class="w-5 h-5"></svg>
         }
       </button>
     </div>
   </div>
+
+  <!-- Mobile Dropdown Drawer -->
+  @if (isMobileMenuOpen()) {
+    <div class="md:hidden border-t border-app-border bg-app-card/95 backdrop-blur-lg px-6 py-6 flex flex-col gap-4 shadow-xl">
+      <a routerLink="/" fragment="projects" (click)="closeMobileMenu()"
+        class="text-base uppercase tracking-wider font-bold text-app-fg hover:text-primary transition-colors py-2 border-b border-app-border/40">
+        Projects
+      </a>
+      <a routerLink="/" fragment="experience" (click)="closeMobileMenu()"
+        class="text-base uppercase tracking-wider font-bold text-app-fg hover:text-primary transition-colors py-2 border-b border-app-border/40">
+        Experience
+      </a>
+      <a routerLink="/articles" (click)="closeMobileMenu()"
+        class="text-base uppercase tracking-wider font-bold text-app-fg hover:text-primary transition-colors py-2 border-b border-app-border/40">
+        Writing
+      </a>
+    </div>
+  }
 </nav>
 
-<main class="pt-32 pb-20 px-4 max-w-7xl mx-auto w-full grow">
+<main class="pt-24 sm:pt-32 pb-16 sm:pb-20 px-4 max-w-7xl mx-auto w-full grow">
   <router-outlet />
 </main>
 
 <footer class="border-t border-app-border py-10 px-4 bg-app-card/50">
   <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-    <p class="text-app-muted text-sm">© 2026 Catodev Portfolio. Built with Angular 21.</p>
+    <p class="text-app-muted text-sm text-center md:text-left">© 2026 Catodev Portfolio. Built with Angular.</p>
     <div class="flex gap-4">
       <a href="https://www.linkedin.com/in/catriel-pereira/" target="_blank"
         class="p-2 border border-app-border text-app-muted hover:text-primary hover:border-primary transition-all rounded bg-app-card/50 hover:bg-app-card hover:-translate-y-1">

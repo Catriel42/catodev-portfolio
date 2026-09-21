@@ -9,32 +9,32 @@ import { LucideArrowRight, LucideBookOpen } from '@lucide/angular';
   imports: [RouterLink, DatePipe, LucideArrowRight, LucideBookOpen],
   template: `
     <article class="group relative bg-app-card border border-app-border rounded-lg overflow-hidden hover:border-primary/50 transition-all flex flex-col h-full">
-      <div class="h-48 overflow-hidden relative">
-        <img [src]="article().imageUrl" [alt]="article().title" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" />
+      <div class="h-44 sm:h-48 overflow-hidden relative">
+        <img [src]="article().imageUrl" [alt]="article().title" class="w-full h-full object-cover grayscale-0 md:grayscale md:group-hover:grayscale-0 transition-all duration-500 md:group-hover:scale-105" />
         <div class="absolute inset-0 bg-gradient-to-t from-app-bg to-transparent opacity-60"></div>
         
-        <div class="absolute top-4 left-4">
-          <span class="px-3 py-1 text-[10px] font-black uppercase tracking-widest rounded bg-primary text-white shadow-[2px_2px_0px_0px_rgba(0,0,0,0.5)]">
+        <div class="absolute top-3 sm:top-4 left-3 sm:left-4">
+          <span class="px-2.5 sm:px-3 py-1 text-[9px] sm:text-[10px] font-black uppercase tracking-widest rounded bg-primary text-white shadow-[2px_2px_0px_0px_rgba(0,0,0,0.5)]">
             {{ article().type }}
           </span>
         </div>
 
-        <div class="absolute bottom-4 left-4 flex gap-2 flex-wrap">
+        <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 flex gap-1.5 sm:gap-2 flex-wrap">
           @for (tag of article().tags; track tag) {
-            <span class="px-2 py-1 text-[10px] bg-app-card/90 border border-app-border rounded font-bold uppercase text-app-muted">
+            <span class="px-2 py-0.5 sm:py-1 text-[9px] sm:text-[10px] bg-app-card/90 border border-app-border rounded font-bold uppercase text-app-muted">
               {{ tag }}
             </span>
           }
         </div>
       </div>
       
-      <div class="p-6 flex flex-col flex-grow gap-4">
+      <div class="p-5 sm:p-6 flex flex-col flex-grow gap-3 sm:gap-4">
         <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-app-muted">
           <svg lucideBookOpen class="w-4 h-4"></svg>
           <time>{{ article().date | date:'mediumDate' }}</time>
         </div>
 
-        <h3 class="text-2xl font-bold tracking-tight text-app-fg group-hover:text-primary transition-colors">
+        <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-app-fg group-hover:text-primary transition-colors">
           {{ article().title }}
         </h3>
         

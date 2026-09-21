@@ -7,14 +7,14 @@ import { ArticleCard } from './article-card';
   imports: [ArticleCard],
   template: `
     <div class="animate-fade-in py-12">
-      <div class="mb-12">
-        <h1 class="text-5xl font-black uppercase tracking-tighter text-app-fg mb-4">Writing & Workshops</h1>
-        <p class="text-app-muted text-lg max-w-2xl">
+      <div class="mb-8 sm:mb-12">
+        <h1 class="text-3xl sm:text-5xl font-black uppercase tracking-tighter text-app-fg mb-3 sm:mb-4">Writing & Workshops</h1>
+        <p class="text-app-muted text-base sm:text-lg max-w-2xl">
           Thoughts on software engineering, front-end architecture, and guides for my workshops.
         </p>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         @for (article of articles(); track article.id) {
           <app-article-card [article]="article" />
         }

@@ -1,6 +1,6 @@
-# Thoughts on Angular 21
-
-Angular 21 is a massive step forward for the framework.
+# Thoughts on Angular
+ 
+Angular is a massive step forward for the framework.
 
 **Signals** have completely changed how I think about reactivity and state management. The fact that the entire application can be zoneless is mind-blowing.
 

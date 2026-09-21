@@ -26,15 +26,15 @@ marked.use(markedAlert());
   selector: 'app-article-detail',
   imports: [RouterLink, DatePipe, LucideArrowLeft, LucideCalendar, LucideTag],
   template: `
-    <article class="max-w-3xl mx-auto py-12 animate-fade-in">
-      <a routerLink="/articles" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-app-muted hover:text-primary transition-colors mb-12 group">
+    <article class="max-w-3xl mx-auto py-8 sm:py-12 animate-fade-in">
+      <a routerLink="/articles" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-app-muted hover:text-primary transition-colors mb-8 sm:mb-12 group">
         <svg lucideArrowLeft class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></svg>
         Back to Articles
       </a>
 
       @if (article()) {
-        <header class="mb-12">
-          <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-app-muted mb-6 flex-wrap">
+        <header class="mb-8 sm:mb-12">
+          <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-app-muted mb-4 sm:mb-6 flex-wrap">
             <span class="px-3 py-1 bg-primary text-white rounded shadow-[2px_2px_0px_0px_rgba(0,0,0,0.5)]">
               {{ article()?.type }}
             </span>
@@ -44,7 +44,7 @@ marked.use(markedAlert());
             </div>
           </div>
 
-          <h1 class="text-4xl md:text-5xl font-black tracking-tight text-app-fg mb-6">
+          <h1 class="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-app-fg mb-4 sm:mb-6">
             {{ article()?.title }}
           </h1>
 
@@ -59,8 +59,8 @@ marked.use(markedAlert());
         </header>
 
         @if (article()?.imageUrl) {
-          <div class="w-full h-[400px] rounded-xl overflow-hidden mb-12 border border-app-border shadow-[8px_8px_0px_0px_var(--color-app-border)]">
-            <img [src]="article()?.imageUrl" [alt]="article()?.title" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+          <div class="w-full h-[220px] sm:h-[400px] rounded-xl overflow-hidden mb-8 sm:mb-12 border border-app-border shadow-[5px_5px_0px_0px_var(--color-app-border)] sm:shadow-[8px_8px_0px_0px_var(--color-app-border)]">
+            <img [src]="article()?.imageUrl" [alt]="article()?.title" class="w-full h-full object-cover grayscale-0 md:grayscale md:hover:grayscale-0 transition-all duration-700" />
           </div>
         }
 

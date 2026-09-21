@@ -11,8 +11,9 @@
   --color-zinc-200: #e4e4e7;
   --color-zinc-300: #d4d4d8;
 
-  --color-primary: #9333ea;
-  --color-primary-light: #c084fc;
+  --color-primary: #20B2AA;
+  --color-primary-light: #ADD8E6;
+  --color-primary-shadow: color-mix(in srgb, var(--color-primary) 35%, transparent);
 
   /* Semantic Variables */
   --color-app-bg: var(--color-zinc-950);
@@ -40,11 +41,17 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Custom Scrollbar */
