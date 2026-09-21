@@ -1,7 +1,9 @@
 <nav class="fixed top-0 w-full z-50 border-b border-app-border bg-app-bg/90 backdrop-blur-md">
   <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
     <a routerLink="/" (click)="closeMobileMenu()" class="flex items-center gap-2 group">
-      <div class="w-8 h-8 bg-primary rounded shadow-[4px_4px_0px_0px_var(--color-primary-shadow)] group-hover:translate-x-[1px] group-hover:translate-y-[1px] transition-transform"></div>
+      <div class="w-8 h-8 bg-primary rounded flex items-center justify-center font-mono font-black text-xs text-zinc-950 shadow-[4px_4px_0px_0px_var(--color-primary-shadow)] group-hover:translate-x-[1px] group-hover:translate-y-[1px] transition-transform select-none">
+        &gt;_
+      </div>
       <span class="font-bold tracking-tighter text-xl text-app-fg">CATO<span class="text-primary">.DEV</span></span>
     </a>
 
@@ -71,7 +73,7 @@
 
 <footer class="border-t border-app-border py-10 px-4 bg-app-card/50">
   <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-    <p class="text-app-muted text-sm text-center md:text-left">© 2026 Catodev Portfolio. Built with Angular.</p>
+    <p class="text-app-muted text-sm text-center md:text-left">© {{ currentYear }} catodev_</p>
     <div class="flex gap-4">
       <a href="https://www.linkedin.com/in/catriel-pereira/" target="_blank"
         class="p-2 border border-app-border text-app-muted hover:text-primary hover:border-primary transition-all rounded bg-app-card/50 hover:bg-app-card hover:-translate-y-1">

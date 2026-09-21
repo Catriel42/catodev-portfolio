@@ -13,6 +13,7 @@ import { SocialIcons } from './ui/social';
 export class App {
   public readonly theme = inject(Theme);
   public readonly isMobileMenuOpen = signal<boolean>(false);
+    public readonly currentYear = new Date().getFullYear();
 
   public toggleMobileMenu(): void {
     this.isMobileMenuOpen.update(open => !open);
