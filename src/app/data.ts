@@ -66,17 +66,17 @@ export class Data {
   private readonly _experience = signal<Experience[]>([
     {
       id: '1',
-      company: 'Jala University',
-      role: 'Commercial Software Engineering Student',
-      period: '2024 - Present',
-      description: 'Commercial software engineer in training with a focus on high-impact product development. Specialized in scalable architectures, critical system optimization, and strategic AI integration for enterprise-grade solutions.'
-    },
-    {
-      id: '2',
       company: 'NASA Space Apps Challenge Cochabamba 2025',
       role: '1st Place Winner (Team CloudCatchers)',
       period: 'October 2025',
       description: 'Won 1st place in the Cochabamba NASA Space Apps Hackathon with project "WIRA". Developed an intelligent air quality prediction platform integrating NASA TEMPO satellite data with Machine Learning models and an AI-driven chatbot for natural language atmospheric analysis.'
+    },
+    {
+      id: '2',
+      company: 'Jala University',
+      role: 'Commercial Software Engineering Student',
+      period: '2024 - Present',
+      description: 'Commercial software engineer in training with a focus on high-impact product development. Specialized in scalable architectures, critical system optimization, and strategic AI integration for enterprise-grade solutions.'
     }
   ]);
 
