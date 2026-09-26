@@ -68,7 +68,7 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
 
             <!-- Keynote Real QR Code -->
             <div class="qr-frame">
-              <img src="/aws-ai-qr.png" alt="Escanea para diapositivas y código" class="qr-img" />
+              <img src="/aws-ai-qr.svg" alt="Escanea para diapositivas y código" class="qr-img" />
             </div>
 
             <div class="qr-info">

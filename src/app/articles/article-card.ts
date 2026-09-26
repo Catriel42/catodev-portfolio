@@ -53,7 +53,7 @@ import { LucideArrowRight, LucideBookOpen } from '@lucide/angular';
         <div class="pt-4 border-t border-app-border">
           <a [routerLink]="article().linkUrl ?? ['/articles', article().slug]" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:text-primary-light transition-colors group/link">
             @if (article().type === 'talk') {
-              Ver Slides Interactivas
+              Read Talk
             } @else {
               Read More
             }

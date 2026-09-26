@@ -101,7 +101,7 @@ export class Data {
       type: 'talk',
       date: '2026-09-26',
       tags: ['Slides', 'AWS AI', 'Bedrock', 'Strands', 'AgentCore'],
-      imageUrl: '/taller-aws-images/ia-en-aws-cover.svg',
+      imageUrl: '/taller-aws-images/ia-en-aws-cover.png',
       linkUrl: '/talks/ia-en-aws'
     },
     {
