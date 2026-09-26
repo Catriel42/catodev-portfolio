@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide/angular';
+import { LucideBookOpen, LucideCode, LucideGlobe, LucideGraduationCap } from '@lucide/angular';
 
 @Component({
   selector: 'app-slide-cierre',
-  imports: [LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles],
+  imports: [LucideBookOpen, LucideCode, LucideGlobe, LucideGraduationCap],
   template: `
     <div class="cierre-wrapper">
       <div class="cierre-layout">
@@ -14,6 +14,20 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
           <p class="subtitle">¿Preguntas?</p>
 
           <div class="links-container">
+            <!-- Ricardo Ceci - AWS AI Hero Course -->
+            <a class="link-card highlight-course" href="https://www.ricardoceci.dev/" target="_blank" rel="noopener noreferrer">
+              <div class="link-icon-box course-box">
+                <svg lucideGraduationCap class="link-icon text-accent"></svg>
+              </div>
+              <div class="link-text-content">
+                <div class="link-header">
+                  <span class="link-title">Ricardo Ceci · Curso de Agentes</span>
+                  <span class="link-tag font-mono hero-tag">AWS AI HERO</span>
+                </div>
+                <div class="link-url font-mono">ricardoceci.dev · De Cero a Producción (Strands &amp; AgentCore)</div>
+              </div>
+            </a>
+
             <!-- Strands Docs -->
             <a class="link-card" href="https://strandsagents.com" target="_blank" rel="noopener noreferrer">
               <div class="link-icon-box">
@@ -61,10 +75,7 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
         <!-- Right Column: Keynote QR Card -->
         <div class="right-col">
           <div class="qr-card">
-            <div class="qr-badge font-mono">
-              <svg lucideSparkles class="qr-badge-icon text-accent"></svg>
-              <span>MATERIAL COMPLETO</span>
-            </div>
+
 
             <!-- Keynote Real QR Code -->
             <div class="qr-frame">
@@ -133,9 +144,9 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
     }
 
     .subtitle {
-      font-size: clamp(1.25rem, 2vw, 1.55rem);
+      font-size: clamp(1.2rem, 1.8vw, 1.45rem);
       color: var(--fg-muted);
-      margin: 0 0 2rem 0;
+      margin: 0 0 1.25rem 0;
       max-width: 55ch;
       line-height: 1.5;
     }
@@ -143,18 +154,18 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
     .links-container {
       display: flex;
       flex-direction: column;
-      gap: 1.25rem;
+      gap: 0.85rem;
       max-width: 680px;
     }
 
     .link-card {
       display: flex;
       align-items: center;
-      gap: 1.35rem;
-      padding: 1.25rem 1.65rem;
+      gap: 1.15rem;
+      padding: 0.95rem 1.35rem;
       background: var(--bg-surface);
       border: 1px solid var(--surface-border-bright);
-      border-radius: 18px;
+      border-radius: 16px;
       text-decoration: none;
       color: var(--fg);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
@@ -167,20 +178,31 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
       transform: translateX(6px);
     }
 
+    .highlight-course {
+      border-color: rgba(255, 153, 0, 0.4);
+      background: linear-gradient(90deg, rgba(255, 153, 0, 0.08) 0%, var(--bg-surface) 100%);
+    }
+
     .highlight-link {
       border-color: rgba(255, 153, 0, 0.3);
     }
 
     .link-icon-box {
-      width: 3.5rem;
-      height: 3.5rem;
-      border-radius: 14px;
+      width: 3.15rem;
+      height: 3.15rem;
+      border-radius: 12px;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.1);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+    }
+
+    .course-box {
+      background: rgba(255, 153, 0, 0.15);
+      border-color: rgba(255, 153, 0, 0.4);
+      box-shadow: 0 0 16px var(--accent-glow);
     }
 
     .accent-box {
@@ -190,14 +212,14 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
     }
 
     .link-icon {
-      width: 1.8rem;
-      height: 1.8rem;
+      width: 1.65rem;
+      height: 1.65rem;
     }
 
     .link-text-content {
       display: flex;
       flex-direction: column;
-      gap: 0.3rem;
+      gap: 0.25rem;
       flex-grow: 1;
       overflow: hidden;
     }
@@ -205,23 +227,29 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
     .link-header {
       display: flex;
       align-items: center;
-      gap: 0.85rem;
+      gap: 0.75rem;
     }
 
     .link-title {
       font-weight: 700;
-      font-size: 1.22rem;
+      font-size: 1.15rem;
       color: var(--fg);
     }
 
     .link-tag {
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 700;
       color: var(--fg-muted);
       letter-spacing: 0.08em;
       background: rgba(255, 255, 255, 0.05);
-      padding: 0.2rem 0.6rem;
-      border-radius: 5px;
+      padding: 0.18rem 0.55rem;
+      border-radius: 4px;
+    }
+
+    .hero-tag {
+      color: #FF9900;
+      background: rgba(255, 153, 0, 0.15);
+      border: 1px solid rgba(255, 153, 0, 0.35);
     }
 
     .highlight-tag {
@@ -230,7 +258,7 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
     }
 
     .link-url {
-      font-size: 0.92rem;
+      font-size: 0.88rem;
       color: var(--fg-muted);
       white-space: nowrap;
       overflow: hidden;
