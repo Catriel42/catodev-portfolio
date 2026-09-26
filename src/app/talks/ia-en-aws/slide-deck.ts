@@ -9,7 +9,7 @@ import {
   HostListener,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { SlideTitulo } from './slides/slide-01-titulo';
@@ -57,6 +57,7 @@ const SLIDE_TITLES = [
 @Component({
   selector: 'app-slide-deck',
   imports: [
+    RouterLink,
     SlideTitulo,
     SlidePresentacion,
     SlideTipazo,
@@ -80,6 +81,18 @@ const SLIDE_TITLES = [
   host: { class: 'slide-deck' },
   styleUrl: './slide-deck.css',
   template: `
+    <!-- Top-Left Floating Back Button -->
+    <a routerLink="/"
+       class="slide-back-home"
+       title="Volver a Cato.dev (Esc)"
+       aria-label="Volver al inicio">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m15 18-6-6 6-6"/>
+      </svg>
+      <span class="back-text font-mono">cato.dev</span>
+      <span class="esc-badge font-mono">Esc</span>
+    </a>
+
     <!-- Progress bar -->
     <div class="slide-progress"
          [style.width.%]="progressPercent()"
@@ -138,6 +151,18 @@ const SLIDE_TITLES = [
           <polyline points="9 18 15 12 9 6"/>
         </svg>
       </button>
+
+      <span class="nav-divider" aria-hidden="true"></span>
+
+      <a routerLink="/"
+         class="nav-home-btn"
+         title="Volver a Home (Esc)"
+         aria-label="Volver al inicio">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </a>
     </nav>
   `,
 })
@@ -184,6 +209,10 @@ export class SlideDeck implements OnInit, OnDestroy {
     if (event.ctrlKey || event.metaKey || event.altKey) return;
 
     switch (event.key) {
+      case 'Escape':
+        event.preventDefault();
+        this.router.navigate(['/']);
+        break;
       case 'ArrowRight':
       case 'ArrowDown':
       case ' ':

@@ -68,7 +68,8 @@
   z-index: 30;
 }
 
-.slide-nav button {
+.slide-nav button,
+.nav-home-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,18 +79,21 @@
   border-radius: 9999px;
   background: rgba(255, 255, 255, 0.04);
   color: var(--fg);
+  text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.slide-nav button:hover:not(:disabled) {
+.slide-nav button:hover:not(:disabled),
+.nav-home-btn:hover {
   border-color: var(--accent);
   background: var(--accent-glow);
   color: var(--accent-light);
   transform: translateY(-1px);
 }
 
-.slide-nav button:focus-visible {
+.slide-nav button:focus-visible,
+.nav-home-btn:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
@@ -106,6 +110,70 @@
   color: var(--fg-muted);
   padding: 0 0.5rem;
   letter-spacing: 0.05em;
+}
+
+.nav-divider {
+  width: 1px;
+  height: 1.25rem;
+  background: var(--surface-border-bright);
+  margin: 0 0.15rem;
+}
+
+/* ── Top-Left Floating Back to Home button ── */
+.slide-back-home {
+  position: absolute;
+  top: clamp(1rem, 2.5vh, 1.75rem);
+  left: clamp(1.25rem, 3vw, 2.25rem);
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.4rem 0.85rem;
+  background: rgba(18, 22, 32, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--surface-border);
+  border-radius: 9999px;
+  color: var(--fg-muted);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  opacity: 0.55;
+  transition: all 0.25s ease;
+  z-index: 40;
+}
+
+.slide-back-home:hover {
+  opacity: 1;
+  color: var(--fg);
+  border-color: var(--accent);
+  background: rgba(18, 22, 32, 0.9);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 16px var(--accent-glow);
+  transform: translateY(-1px);
+}
+
+.slide-back-home .esc-badge {
+  font-size: 0.65rem;
+  padding: 0.15rem 0.4rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  color: var(--fg-subtle);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.slide-back-home:hover .esc-badge {
+  color: var(--accent);
+  border-color: rgba(255, 153, 0, 0.35);
+  background: rgba(255, 153, 0, 0.1);
+}
+
+@media (max-width: 640px) {
+  .slide-back-home .esc-badge {
+    display: none;
+  }
 }
 
 /* ── Slide entry animation ── */
