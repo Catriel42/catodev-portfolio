@@ -7,7 +7,8 @@ import { ArticleCard } from './article-card';
   selector: 'app-articles-preview',
   imports: [RouterLink, ArticleCard],
   template: `
-    <section id="articles" class="py-16 sm:py-20 border-t border-app-border">
+    <section id="writing" class="py-16 sm:py-20 border-t border-app-border scroll-mt-20 sm:scroll-mt-28">
+      <span id="articles" class="sr-only"></span>
       <div class="flex items-center justify-between mb-8 sm:mb-12">
         <div class="flex items-center gap-3 sm:gap-4 flex-grow">
           <h2 class="text-2xl sm:text-4xl font-black uppercase tracking-tighter text-app-fg">Writing & Workshops</h2>

@@ -4,7 +4,7 @@ import { Data } from '../data';
 @Component({
   selector: 'app-experience',
   template: `
-    <section id="experience" class="py-16 sm:py-20 border-t border-app-border mb-16 sm:mb-20">
+    <section id="experience" class="py-16 sm:py-20 border-t border-app-border mb-16 sm:mb-20 scroll-mt-20 sm:scroll-mt-28">
       <div class="flex items-center gap-3 sm:gap-4 mb-10 sm:mb-16">
         <h2 class="text-2xl sm:text-4xl font-black uppercase tracking-tighter text-app-fg">Experience</h2>
         <div class="h-[2px] flex-grow bg-app-border"></div>

@@ -8,7 +8,7 @@ export type ProjectArea = 'All' | 'Full-Stack & Web' | 'Backend & Cloud' | 'AI &
   selector: 'app-projects',
   imports: [LucideCode, LucideExternalLink],
   template: `
-    <section id="projects" class="py-16 sm:py-20 border-t border-app-border">
+    <section id="projects" class="py-16 sm:py-20 border-t border-app-border scroll-mt-20 sm:scroll-mt-28">
       <div class="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
         <h2 class="text-2xl sm:text-4xl font-black uppercase tracking-tighter text-app-fg">Selected Projects</h2>
         <div class="h-[2px] flex-grow bg-app-border"></div>
