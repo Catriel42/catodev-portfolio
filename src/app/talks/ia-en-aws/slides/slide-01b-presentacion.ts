@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { LucideUsers, LucideGraduationCap, LucideMic } from '@lucide/angular';
+import { LucideGraduationCap, LucideMic } from '@lucide/angular';
 
 @Component({
   selector: 'app-slide-presentacion',
-  imports: [LucideUsers, LucideGraduationCap, LucideMic],
+  imports: [LucideGraduationCap, LucideMic],
   template: `
     <div class="presentacion-wrapper">
       <div class="header-section">
         <div class="pill-badge font-mono">INTRODUCCIÓN · ¿QUIÉN SOY?</div>
         <h2 class="main-heading">Catriel Pereira</h2>
-        <p class="subtitle">Software Engineer &amp; Community Leader en Cochabamba, Bolivia.</p>
+        <p class="subtitle">Software Engineer &amp; UG Leader Bolivia.</p>
       </div>
 
       <!-- Main Profile Cards (Concise, 2-column) -->
@@ -18,7 +18,7 @@ import { LucideUsers, LucideGraduationCap, LucideMic } from '@lucide/angular';
         <div class="profile-card highlight-aws">
           <div class="card-header">
             <div class="icon-box icon-aws">
-              <svg lucideUsers class="card-icon text-aws"></svg>
+              <img src="/AwsAIbolvia.png" alt="AWS AI Bolivia Community" class="aws-community-logo" />
             </div>
             <span class="card-tag font-mono text-aws">COMUNIDAD AWS</span>
           </div>
@@ -168,9 +168,9 @@ import { LucideUsers, LucideGraduationCap, LucideMic } from '@lucide/angular';
     }
 
     .icon-box {
-      width: 3.25rem;
-      height: 3.25rem;
-      border-radius: 12px;
+      width: 4.25rem;
+      height: 4.25rem;
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -179,18 +179,26 @@ import { LucideUsers, LucideGraduationCap, LucideMic } from '@lucide/angular';
     .icon-aws {
       background: rgba(255, 153, 0, 0.12);
       border: 1px solid rgba(255, 153, 0, 0.35);
-      box-shadow: 0 0 14px var(--accent-glow);
+      box-shadow: 0 0 18px var(--accent-glow);
+      padding: 0.35rem;
+    }
+
+    .aws-community-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
     }
 
     .icon-jala {
       background: rgba(0, 210, 255, 0.12);
       border: 1px solid rgba(0, 210, 255, 0.35);
-      box-shadow: 0 0 14px rgba(0, 210, 255, 0.2);
+      box-shadow: 0 0 16px rgba(0, 210, 255, 0.2);
     }
 
     .card-icon {
-      width: 1.75rem;
-      height: 1.75rem;
+      width: 2.15rem;
+      height: 2.15rem;
     }
 
     .text-aws { color: var(--accent); }
