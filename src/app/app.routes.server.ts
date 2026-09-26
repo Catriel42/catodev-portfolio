@@ -19,7 +19,7 @@ export const serverRoutes: ServerRoute[] = [
     path: 'talks/ia-en-aws/:slide',
     renderMode: RenderMode.Prerender,
     async getPrerenderParams() {
-      return Array.from({ length: 17 }, (_, i) => ({ slide: String(i) }));
+      return Array.from({ length: 19 }, (_, i) => ({ slide: String(i) }));
     },
   },
   {

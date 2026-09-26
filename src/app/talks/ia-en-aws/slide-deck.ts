@@ -13,6 +13,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { SlideTitulo } from './slides/slide-01-titulo';
+import { SlidePresentacion } from './slides/slide-01b-presentacion';
+import { SlideTipazo } from './slides/slide-01c-tipazo';
 import { SlideGancho } from './slides/slide-02-gancho';
 import { SlideEmbudo } from './slides/slide-03-embudo';
 import { SlideBedrock } from './slides/slide-04-bedrock';
@@ -32,6 +34,8 @@ import { SlideCierre } from './slides/slide-17-cierre';
 
 const SLIDE_TITLES = [
   'IA en AWS: De las ideas a los agentes',
+  '¿Quién soy? · Catriel Pereira',
+  'CV: Un tipazo',
   'El gancho',
   'El mapa: Idea → Modelo → Agente → Producción',
   'Capa Modelo: Amazon Bedrock',
@@ -54,6 +58,8 @@ const SLIDE_TITLES = [
   selector: 'app-slide-deck',
   imports: [
     SlideTitulo,
+    SlidePresentacion,
+    SlideTipazo,
     SlideGancho,
     SlideEmbudo,
     SlideBedrock,
@@ -91,22 +97,24 @@ const SLIDE_TITLES = [
                [attr.aria-label]="'Slide ' + (current() + 1) + ' of ' + total + ': ' + slideTitle()">
         @switch (current()) {
           @case (0) { <app-slide-titulo /> }
-          @case (1) { <app-slide-gancho /> }
-          @case (2) { <app-slide-embudo /> }
-          @case (3) { <app-slide-bedrock /> }
-          @case (4) { <app-slide-modelo-vs-agente /> }
-          @case (5) { <app-slide-strands /> }
-          @case (6) { <app-slide-strands-features /> }
-          @case (7) { <app-slide-aclaracion /> }
-          @case (8) { <app-slide-transicion /> }
-          @case (9) { <app-slide-agentcore-runtime /> }
-          @case (10) { <app-slide-agentcore-gateway /> }
-          @case (11) { <app-slide-agentcore-harness /> }
-          @case (12) { <app-slide-ecosistema /> }
-          @case (13) { <app-slide-caso-de-uso /> }
-          @case (14) { <app-slide-caso-de-uso-2 /> }
-          @case (15) { <app-slide-panorama /> }
-          @case (16) { <app-slide-cierre /> }
+          @case (1) { <app-slide-presentacion /> }
+          @case (2) { <app-slide-tipazo /> }
+          @case (3) { <app-slide-gancho /> }
+          @case (4) { <app-slide-embudo /> }
+          @case (5) { <app-slide-bedrock /> }
+          @case (6) { <app-slide-modelo-vs-agente /> }
+          @case (7) { <app-slide-strands /> }
+          @case (8) { <app-slide-strands-features /> }
+          @case (9) { <app-slide-aclaracion /> }
+          @case (10) { <app-slide-transicion /> }
+          @case (11) { <app-slide-agentcore-runtime /> }
+          @case (12) { <app-slide-agentcore-gateway /> }
+          @case (13) { <app-slide-agentcore-harness /> }
+          @case (14) { <app-slide-ecosistema /> }
+          @case (15) { <app-slide-caso-de-uso /> }
+          @case (16) { <app-slide-caso-de-uso-2 /> }
+          @case (17) { <app-slide-panorama /> }
+          @case (18) { <app-slide-cierre /> }
         }
       </section>
     </div>
@@ -138,7 +146,7 @@ export class SlideDeck implements OnInit, OnDestroy {
   private readonly router = inject(Router);
   private readonly platformId = inject(PLATFORM_ID);
 
-  readonly total = 17;
+  readonly total = 19;
   readonly current = signal(0);
   readonly slideTitle = computed(() => SLIDE_TITLES[this.current()] ?? '');
   readonly progressPercent = computed(() => ((this.current() + 1) / this.total) * 100);
