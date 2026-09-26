@@ -15,7 +15,7 @@ import { Component } from '@angular/core';
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 75vh;
+      min-height: 80vh;
       width: 100%;
     }
 
@@ -24,16 +24,17 @@ import { Component } from '@angular/core';
       justify-content: center;
       align-items: center;
       width: 100%;
-      padding: 1rem;
+      height: 100%;
+      padding: 0.5rem;
     }
 
     .image-card {
-      max-width: min(480px, 85vw);
-      max-height: 70vh;
+      max-width: min(820px, 94vw);
+      max-height: 85vh;
       border-radius: 24px;
       overflow: hidden;
       border: 1px solid var(--surface-border-bright);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 40px rgba(255, 153, 0, 0.08);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.75), 0 0 50px rgba(255, 153, 0, 0.12);
       background: #0B0E14;
       display: flex;
       align-items: center;
@@ -43,13 +44,13 @@ import { Component } from '@angular/core';
 
     .image-card:hover {
       transform: scale(1.02);
-      border-color: rgba(255, 153, 0, 0.35);
+      border-color: rgba(255, 153, 0, 0.4);
     }
 
     .tipazo-img {
       width: 100%;
       height: 100%;
-      max-height: 70vh;
+      max-height: 85vh;
       object-fit: contain;
       display: block;
     }

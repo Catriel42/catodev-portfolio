@@ -12,56 +12,57 @@ import { LucideUsers, LucideGraduationCap, LucideMic } from '@lucide/angular';
         <p class="subtitle">Software Engineer &amp; Community Leader en Cochabamba, Bolivia.</p>
       </div>
 
-      <div class="bio-grid">
-        <!-- 1. AWS Community Leader -->
-        <div class="bio-card highlight-aws">
-          <div class="card-top">
+      <!-- Main Profile Cards (Concise, 2-column) -->
+      <div class="cards-grid">
+        <!-- 1. AWS User Group Leader -->
+        <div class="profile-card highlight-aws">
+          <div class="card-header">
             <div class="icon-box icon-aws">
               <svg lucideUsers class="card-icon text-aws"></svg>
             </div>
             <span class="card-tag font-mono text-aws">COMUNIDAD AWS</span>
           </div>
 
-          <h3 class="card-title text-aws">AWS AI User Group Leader</h3>
-          <p class="card-desc">
-            Líder de la comunidad oficial de inteligencia artificial de AWS en Bolivia. Impulsando talleres prácticos, charlas técnicas y adopción de arquitecturas agénticas y modelos generativos.
-          </p>
+          <div class="card-body">
+            <h3 class="card-title text-aws">AWS AI User Group Leader</h3>
+            <p class="card-desc">
+              Lidero la comunidad oficial de Inteligencia Artificial en Bolivia. Organización de meetups, workshops y adopción de IA generativa.
+            </p>
+          </div>
 
           <div class="badge-pill font-mono pill-aws">AWS Community Leader · Bolivia</div>
         </div>
 
-        <!-- 2. Jala University Student -->
-        <div class="bio-card highlight-jala">
-          <div class="card-top">
+        <!-- 2. Jala University -->
+        <div class="profile-card highlight-jala">
+          <div class="card-header">
             <div class="icon-box icon-jala">
               <svg lucideGraduationCap class="card-icon text-jala"></svg>
             </div>
-            <span class="card-tag font-mono text-jala">EDUCACIÓN &amp; FORMACIÓN</span>
+            <span class="card-tag font-mono text-jala">EDUCACIÓN</span>
           </div>
 
-          <h3 class="card-title">3er Año · Jala University</h3>
-          <p class="card-desc">
-            Estudiante de <strong>Ingeniería de Software Comercial</strong>. Especializándome en arquitecturas escalables, sistemas cloud críticos y desarrollo de soluciones de alto impacto empresarial.
-          </p>
+          <div class="card-body">
+            <h3 class="card-title">Jala University</h3>
+            <p class="card-desc">
+              3er año de <strong>Ingeniería de Software Comercial</strong>. Enfoque en sistemas distribuidos, arquitectura cloud y desarrollo a gran escala.
+            </p>
+          </div>
 
-          <div class="badge-pill font-mono pill-jala">Commercial Software Engineering</div>
+          <div class="badge-pill font-mono pill-jala">Ing. de Software Comercial</div>
         </div>
+      </div>
 
-        <!-- 3. Rap & Freestyle Fun Fact -->
-        <div class="bio-card highlight-rap">
-          <div class="card-top">
-            <div class="icon-box icon-rap">
-              <svg lucideMic class="card-icon text-rap"></svg>
-            </div>
-            <span class="card-tag font-mono text-rap">FUN FACT · HIP HOP</span>
-          </div>
-
-          <h3 class="card-title text-rap">Rapero &amp; Freestyler</h3>
-          <p class="card-desc">
-            Cuando no estoy tirando código, estoy tirando rimas: freestyler activo apasionado de la improvisación. Me encuentras rapeando en las plazas, especialmente en la <strong>Plaza 14 de Septiembre</strong>.
+      <!-- Fun Fact Bar (Smaller, Casual, Informal) -->
+      <div class="fun-fact-bar">
+        <div class="fun-fact-icon">
+          <svg lucideMic class="mic-icon"></svg>
+        </div>
+        <div class="fun-fact-content">
+          <span class="fun-fact-label font-mono">FUN FACT</span>
+          <p class="fun-fact-text">
+            Fuera del código hago freestyle y rap. De vez en cuando me encuentras improvisando en la <strong>Plaza 14 de Septiembre</strong>.
           </p>
-
-          <div class="badge-pill font-mono pill-rap">Plaza 14 de Septiembre · CBB</div>
         </div>
       </div>
     </div>
@@ -77,35 +78,35 @@ import { LucideUsers, LucideGraduationCap, LucideMic } from '@lucide/angular';
 
     .presentacion-wrapper {
       width: 100%;
-      max-width: 1350px;
+      max-width: 1200px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: clamp(2rem, 4vh, 3.5rem);
+      gap: clamp(1.5rem, 3vh, 2.5rem);
     }
 
     .header-section {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 0.5rem;
     }
 
     .pill-badge {
       display: inline-flex;
       align-items: center;
-      padding: 0.35rem 0.95rem;
+      padding: 0.3rem 0.85rem;
       border-radius: 9999px;
       background: rgba(255, 153, 0, 0.12);
       border: 1px solid rgba(255, 153, 0, 0.35);
       color: var(--accent);
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       width: fit-content;
     }
 
     .main-heading {
-      font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+      font-size: clamp(2.2rem, 3.8vw, 3.4rem);
       font-weight: 800;
       line-height: 1.1;
       letter-spacing: -0.03em;
@@ -114,69 +115,62 @@ import { LucideUsers, LucideGraduationCap, LucideMic } from '@lucide/angular';
     }
 
     .subtitle {
-      font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+      font-size: clamp(1.05rem, 1.5vw, 1.25rem);
       color: var(--fg-muted);
       margin: 0;
-      max-width: 65ch;
     }
 
-    .bio-grid {
+    /* 2-column main profile cards */
+    .cards-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(1.5rem, 2.5vw, 2.25rem);
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(1.25rem, 2vw, 2rem);
       align-items: stretch;
     }
 
-    @media (max-width: 960px) {
-      .bio-grid {
+    @media (max-width: 768px) {
+      .cards-grid {
         grid-template-columns: 1fr;
       }
     }
 
-    .bio-card {
+    .profile-card {
       background: var(--bg-surface);
       border: 1px solid var(--surface-border-bright);
       border-radius: 20px;
-      padding: clamp(1.75rem, 2.5vw, 2.5rem);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+      padding: clamp(1.5rem, 2.2vw, 2.25rem);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
-      transition: all 0.25s ease;
+      transition: transform 0.25s ease, border-color 0.25s ease;
     }
 
-    .bio-card:hover {
-      transform: translateY(-4px);
+    .profile-card:hover {
+      transform: translateY(-3px);
     }
 
-    /* Card Highlights */
     .highlight-aws {
-      border-color: rgba(255, 153, 0, 0.4);
-      background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(255, 153, 0, 0.05) 100%);
-      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5), 0 0 24px rgba(255, 153, 0, 0.08);
+      border-color: rgba(255, 153, 0, 0.35);
+      background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(255, 153, 0, 0.04) 100%);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 24px rgba(255, 153, 0, 0.06);
     }
 
     .highlight-jala {
-      border-color: rgba(0, 210, 255, 0.35);
-      background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(0, 210, 255, 0.04) 100%);
+      border-color: rgba(0, 210, 255, 0.3);
+      background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(0, 210, 255, 0.03) 100%);
     }
 
-    .highlight-rap {
-      border-color: rgba(168, 85, 247, 0.4);
-      background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(168, 85, 247, 0.06) 100%);
-      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5), 0 0 24px rgba(168, 85, 247, 0.08);
-    }
-
-    .card-top {
+    .card-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
     .icon-box {
-      width: 3.5rem;
-      height: 3.5rem;
-      border-radius: 14px;
+      width: 3.25rem;
+      height: 3.25rem;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -185,29 +179,22 @@ import { LucideUsers, LucideGraduationCap, LucideMic } from '@lucide/angular';
     .icon-aws {
       background: rgba(255, 153, 0, 0.12);
       border: 1px solid rgba(255, 153, 0, 0.35);
-      box-shadow: 0 0 16px var(--accent-glow);
+      box-shadow: 0 0 14px var(--accent-glow);
     }
 
     .icon-jala {
       background: rgba(0, 210, 255, 0.12);
       border: 1px solid rgba(0, 210, 255, 0.35);
-      box-shadow: 0 0 16px rgba(0, 210, 255, 0.2);
-    }
-
-    .icon-rap {
-      background: rgba(168, 85, 247, 0.14);
-      border: 1px solid rgba(168, 85, 247, 0.4);
-      box-shadow: 0 0 16px rgba(168, 85, 247, 0.25);
+      box-shadow: 0 0 14px rgba(0, 210, 255, 0.2);
     }
 
     .card-icon {
-      width: 1.85rem;
-      height: 1.85rem;
+      width: 1.75rem;
+      height: 1.75rem;
     }
 
     .text-aws { color: var(--accent); }
     .text-jala { color: #00D2FF; }
-    .text-rap { color: #C084FC; }
 
     .card-tag {
       font-size: 0.72rem;
@@ -215,8 +202,15 @@ import { LucideUsers, LucideGraduationCap, LucideMic } from '@lucide/angular';
       letter-spacing: 0.08em;
     }
 
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex-grow: 1;
+    }
+
     .card-title {
-      font-size: clamp(1.4rem, 2vw, 1.8rem);
+      font-size: clamp(1.35rem, 1.8vw, 1.65rem);
       font-weight: 700;
       color: var(--fg);
       margin: 0;
@@ -224,19 +218,22 @@ import { LucideUsers, LucideGraduationCap, LucideMic } from '@lucide/angular';
     }
 
     .card-desc {
-      font-size: clamp(0.98rem, 1.3vw, 1.12rem);
-      line-height: 1.6;
+      font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+      line-height: 1.55;
       color: var(--fg-muted);
       margin: 0;
-      flex-grow: 1;
+    }
+
+    .card-desc strong {
+      color: var(--fg);
     }
 
     .badge-pill {
       font-size: 0.75rem;
-      padding: 0.4rem 0.85rem;
+      padding: 0.35rem 0.8rem;
       border-radius: 8px;
       width: fit-content;
-      margin-top: 0.5rem;
+      margin-top: 0.25rem;
     }
 
     .pill-aws {
@@ -251,11 +248,69 @@ import { LucideUsers, LucideGraduationCap, LucideMic } from '@lucide/angular';
       border: 1px solid rgba(0, 210, 255, 0.25);
     }
 
-    .pill-rap {
-      color: #E9D5FF;
-      background: rgba(168, 85, 247, 0.12);
-      border: 1px solid rgba(168, 85, 247, 0.3);
+    /* Casual Fun Fact Bar */
+    .fun-fact-bar {
+      display: flex;
+      align-items: center;
+      gap: 1.15rem;
+      background: linear-gradient(90deg, rgba(168, 85, 247, 0.08) 0%, rgba(20, 24, 33, 0.7) 100%);
+      border: 1px solid rgba(168, 85, 247, 0.25);
+      border-radius: 14px;
+      padding: 0.85rem 1.4rem;
+      transition: border-color 0.25s ease;
+    }
+
+    .fun-fact-bar:hover {
+      border-color: rgba(168, 85, 247, 0.45);
+    }
+
+    .fun-fact-icon {
+      width: 2.35rem;
+      height: 2.35rem;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: rgba(168, 85, 247, 0.15);
+      border: 1px solid rgba(168, 85, 247, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #C084FC;
+    }
+
+    .mic-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    .fun-fact-content {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .fun-fact-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #C084FC;
+      background: rgba(168, 85, 247, 0.15);
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    .fun-fact-text {
+      margin: 0;
+      font-size: clamp(0.88rem, 1.15vw, 0.98rem);
+      color: var(--fg-muted);
+      line-height: 1.4;
+    }
+
+    .fun-fact-text strong {
+      color: var(--fg);
     }
   `],
 })
 export class SlidePresentacion {}
+
