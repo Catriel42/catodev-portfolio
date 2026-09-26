@@ -15,7 +15,7 @@ import { Component } from '@angular/core';
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 80vh;
+      height: 100%;
       width: 100%;
     }
 
@@ -29,31 +29,34 @@ import { Component } from '@angular/core';
     }
 
     .image-card {
-      max-width: min(820px, 94vw);
-      max-height: 85vh;
-      border-radius: 24px;
+      height: min(80vh, 760px);
+      aspect-ratio: 410 / 487;
+      max-width: min(92vw, 680px);
+      width: auto;
+      border-radius: 28px;
       overflow: hidden;
       border: 1px solid var(--surface-border-bright);
-      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.75), 0 0 50px rgba(255, 153, 0, 0.12);
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.8), 0 0 60px rgba(255, 153, 0, 0.15);
       background: #0B0E14;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
     }
 
     .image-card:hover {
       transform: scale(1.02);
-      border-color: rgba(255, 153, 0, 0.4);
+      border-color: rgba(255, 153, 0, 0.45);
+      box-shadow: 0 36px 90px rgba(0, 0, 0, 0.85), 0 0 70px rgba(255, 153, 0, 0.25);
     }
 
     .tipazo-img {
       width: 100%;
       height: 100%;
-      max-height: 85vh;
-      object-fit: contain;
+      object-fit: cover;
       display: block;
     }
   `],
 })
 export class SlideTipazo {}
+
