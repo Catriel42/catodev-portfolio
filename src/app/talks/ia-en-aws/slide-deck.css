@@ -1,0 +1,340 @@
+/* Slide Deck — Host & Layout (Keynote Tech Aesthetics) */
+
+@import './design-tokens.css';
+
+:host {
+  display: block;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--bg);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(255, 153, 0, 0.07) 0%, transparent 60%),
+    radial-gradient(circle at 85% 90%, rgba(0, 210, 255, 0.04) 0%, transparent 50%),
+    radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 32px 32px;
+  color: var(--fg);
+  font-family: var(--font-sans);
+  position: relative;
+}
+
+/* ── Slide viewport ── */
+.slide-viewport {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 6vw, 6rem);
+  padding-bottom: clamp(4.5rem, 8vh, 6rem);
+  overflow-y: auto;
+  animation: slide-enter 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ── Progress bar ── */
+.slide-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--cyan) 100%);
+  box-shadow: 0 0 10px var(--accent-glow);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 30;
+}
+
+/* ── Floating Glassmorphic Navigation controls ── */
+.slide-nav {
+  position: absolute;
+  bottom: clamp(1.25rem, 3vh, 2rem);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.5rem 0.85rem;
+  background: rgba(18, 22, 32, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--surface-border-bright);
+  border-radius: 9999px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  z-index: 30;
+}
+
+.slide-nav button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--surface-border);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--fg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.slide-nav button:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+  color: var(--accent-light);
+  transform: translateY(-1px);
+}
+
+.slide-nav button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.slide-nav button:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.slide-counter {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--fg-muted);
+  padding: 0 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+/* ── Slide entry animation ── */
+@keyframes slide-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .slide { animation: none !important; }
+  .slide-progress { transition: none !important; }
+  .slide-nav button { transition: none !important; }
+
+  :host *, :host *::before, :host *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Print styles ── */
+@media print {
+  :host {
+    height: auto;
+    overflow: visible;
+    background: white;
+    color: #111;
+  }
+
+  .slide-viewport { height: auto; }
+
+  .slide {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    break-after: page;
+    animation: none;
+    padding: 2cm;
+  }
+
+  .slide-progress, .slide-nav { display: none !important; }
+
+  .slide[hidden] { display: flex !important; }
+}
+
+/* ── Typography Scale ── */
+.slide h1 {
+  font-size: clamp(2.5rem, 5.5vw, 4.75rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin: 0 0 1.25rem;
+  color: var(--fg);
+}
+
+.slide h2 {
+  font-size: clamp(1.75rem, 3.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 1rem;
+  color: var(--fg);
+}
+
+.slide h3 {
+  font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 0.5rem;
+  color: var(--fg);
+}
+
+.slide p {
+  font-size: clamp(1rem, 1.8vw, 1.35rem);
+  line-height: 1.6;
+  max-width: 60ch;
+  margin: 0 0 1rem;
+  color: var(--fg-muted);
+}
+
+.slide .text-muted { color: var(--fg-muted); }
+.slide .text-accent { color: var(--accent); font-weight: 600; }
+.slide .font-mono { font-family: var(--font-mono); }
+
+/* ── Shared Utility Classes for Child Slides ── */
+::ng-deep .slide-deck .pill-badge,
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  background: var(--accent-glow);
+  border: 1px solid var(--accent-border);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  width: fit-content;
+}
+
+/* ── Two Column & Grid Layout Patterns ── */
+::ng-deep .slide-deck .slide-two-cols,
+.slide-two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: stretch;
+  margin-top: 1rem;
+}
+
+@media (max-width: 640px) {
+  ::ng-deep .slide-deck .slide-two-cols,
+  .slide-two-cols { grid-template-columns: 1fr; }
+}
+
+::ng-deep .slide-deck .slide-card,
+.slide-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--surface-border);
+  border-radius: 16px;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+::ng-deep .slide-deck .slide-card:hover,
+.slide-card:hover {
+  border-color: var(--surface-border-bright);
+}
+
+::ng-deep .slide-deck .slide-card.highlight,
+.slide-card.highlight {
+  border-color: var(--accent-border);
+  background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(255, 153, 0, 0.04) 100%);
+}
+
+::ng-deep .slide-deck .slide-grid,
+.slide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.85rem;
+  margin: 1.25rem 0;
+}
+
+::ng-deep .slide-deck .slide-grid-item,
+.slide-grid-item {
+  padding: 0.9rem 1.1rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--surface-border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  font-weight: 500;
+  color: var(--fg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: all 0.2s ease;
+}
+
+::ng-deep .slide-deck .slide-grid-item:hover,
+.slide-grid-item:hover {
+  border-color: var(--accent-border);
+  background: var(--bg-surface-hover);
+  transform: translateY(-2px);
+}
+
+/* ── Code Terminal Frame ── */
+::ng-deep .slide-deck .code-terminal,
+.code-terminal {
+  background: #0B0E14;
+  border: 1px solid var(--surface-border-bright);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  margin: 1.25rem 0;
+  max-width: none;
+  width: 100%;
+}
+
+.code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 1rem;
+  background: #141924;
+  border-bottom: 1px solid var(--surface-border);
+}
+
+.code-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.code-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot-red { background: #FF5F56; }
+.dot-yellow { background: #FFBD2E; }
+.dot-green { background: #27C93F; }
+
+.code-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--fg-subtle);
+}
+
+.code-terminal pre {
+  margin: 0;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: clamp(0.9rem, 1.5vw, 1.15rem);
+  line-height: 1.65;
+  color: #E2E8F0;
+  overflow-x: auto;
+}

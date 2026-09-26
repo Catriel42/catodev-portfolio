@@ -140,3 +140,14 @@ body {
   height: 1rem;
   fill: currentColor;
 }
+
+/* Slide Deck — full-viewport mode */
+body.slide-deck-active nav,
+body.slide-deck-active footer {
+  display: none !important;
+}
+
+body.slide-deck-active main {
+  padding: 0 !important;
+  max-width: none !important;
+}
