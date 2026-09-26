@@ -24,8 +24,9 @@ export interface Article {
   excerpt: string;
   content?: string;
   contentUrl?: string;
-  type: 'blog' | 'workshop';
+  type: 'blog' | 'workshop' | 'talk';
   date: string;
   tags: string[];
   imageUrl: string;
+  linkUrl?: string;
 }

@@ -66,70 +66,9 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
               <span>MATERIAL COMPLETO</span>
             </div>
 
-            <!-- Stylized Keynote Vector QR Code -->
+            <!-- Keynote Real QR Code -->
             <div class="qr-frame">
-              <svg class="qr-svg" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
-                <!-- Top-Left Finder Pattern -->
-                <rect x="10" y="10" width="40" height="40" rx="8" fill="none" stroke="#FF9900" stroke-width="4" />
-                <rect x="20" y="20" width="20" height="20" rx="4" fill="#FF9900" />
-
-                <!-- Top-Right Finder Pattern -->
-                <rect x="110" y="10" width="40" height="40" rx="8" fill="none" stroke="#FF9900" stroke-width="4" />
-                <rect x="120" y="20" width="20" height="20" rx="4" fill="#FF9900" />
-
-                <!-- Bottom-Left Finder Pattern -->
-                <rect x="10" y="110" width="40" height="40" rx="8" fill="none" stroke="#FF9900" stroke-width="4" />
-                <rect x="20" y="120" width="20" height="20" rx="4" fill="#FF9900" />
-
-                <!-- Timing & Data Matrix Dots -->
-                <g fill="#F3F4F6" opacity="0.85">
-                  <!-- Timing lines -->
-                  <rect x="26" y="60" width="8" height="8" rx="2" />
-                  <rect x="26" y="76" width="8" height="8" rx="2" />
-                  <rect x="26" y="92" width="8" height="8" rx="2" />
-                  <rect x="60" y="26" width="8" height="8" rx="2" />
-                  <rect x="76" y="26" width="8" height="8" rx="2" />
-                  <rect x="92" y="26" width="8" height="8" rx="2" />
-
-                  <!-- Center & Data bits -->
-                  <rect x="60" y="60" width="10" height="10" rx="2" fill="#00D2FF" />
-                  <rect x="76" y="60" width="8" height="8" rx="2" />
-                  <rect x="90" y="60" width="10" height="10" rx="2" />
-                  <rect x="60" y="76" width="8" height="8" rx="2" />
-                  <rect x="74" y="74" width="12" height="12" rx="3" fill="#FF9900" />
-                  <rect x="92" y="76" width="8" height="8" rx="2" fill="#00D2FF" />
-                  <rect x="60" y="92" width="10" height="10" rx="2" />
-                  <rect x="76" y="92" width="8" height="8" rx="2" />
-                  <rect x="90" y="92" width="10" height="10" rx="2" fill="#FF9900" />
-
-                  <rect x="110" y="60" width="8" height="8" rx="2" />
-                  <rect x="124" y="60" width="8" height="8" rx="2" />
-                  <rect x="138" y="60" width="8" height="8" rx="2" />
-                  <rect x="110" y="76" width="10" height="10" rx="2" />
-                  <rect x="128" y="76" width="8" height="8" rx="2" />
-                  <rect x="110" y="92" width="8" height="8" rx="2" />
-                  <rect x="124" y="92" width="10" height="10" rx="2" />
-                  <rect x="140" y="92" width="8" height="8" rx="2" />
-
-                  <rect x="60" y="110" width="8" height="8" rx="2" />
-                  <rect x="76" y="110" width="10" height="10" rx="2" />
-                  <rect x="92" y="110" width="8" height="8" rx="2" />
-                  <rect x="60" y="126" width="10" height="10" rx="2" />
-                  <rect x="76" y="126" width="8" height="8" rx="2" />
-                  <rect x="92" y="126" width="10" height="10" rx="2" />
-                  <rect x="60" y="142" width="8" height="8" rx="2" />
-                  <rect x="76" y="142" width="10" height="10" rx="2" />
-
-                  <rect x="110" y="110" width="10" height="10" rx="2" />
-                  <rect x="126" y="110" width="8" height="8" rx="2" />
-                  <rect x="140" y="110" width="8" height="8" rx="2" />
-                  <rect x="110" y="126" width="8" height="8" rx="2" />
-                  <rect x="124" y="126" width="12" height="12" rx="3" fill="#00D2FF" />
-                  <rect x="110" y="142" width="10" height="10" rx="2" />
-                  <rect x="126" y="142" width="8" height="8" rx="2" />
-                  <rect x="138" y="138" width="10" height="10" rx="2" />
-                </g>
-              </svg>
+              <img src="/aws-ai-qr.png" alt="Escanea para diapositivas y código" class="qr-img" />
             </div>
 
             <div class="qr-info">
@@ -335,19 +274,21 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
     .qr-frame {
       width: 220px;
       height: 220px;
-      background: #090C12;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: #FFFFFF;
+      border: 2px solid rgba(255, 153, 0, 0.4);
       border-radius: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1.25rem;
-      box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.6), 0 0 24px rgba(255, 153, 0, 0.06);
+      padding: 0.85rem;
+      box-shadow: 0 0 32px rgba(255, 153, 0, 0.15), 0 16px 40px rgba(0, 0, 0, 0.5);
     }
 
-    .qr-svg {
+    .qr-img {
       width: 100%;
       height: 100%;
+      object-fit: contain;
+      image-rendering: pixelated;
     }
 
     .qr-info {

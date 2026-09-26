@@ -93,6 +93,18 @@ export class Data {
 
   private readonly _articles = signal<Article[]>([
     {
+      id: '2',
+      slug: 'ia-en-aws',
+      title: 'IA en AWS: De las ideas a los agentes en producción',
+      excerpt: 'Slide deck interactivo para la comunidad: Amazon Bedrock, Strands Agents y AgentCore. Explora la arquitectura de 4 capas para agentes en la nube.',
+      contentUrl: '/articles-content/ia-en-aws.md',
+      type: 'talk',
+      date: '2026-09-26',
+      tags: ['Slides', 'AWS AI', 'Bedrock', 'Strands', 'AgentCore'],
+      imageUrl: '/taller-aws-images/ia-en-aws-cover.svg',
+      linkUrl: '/talks/ia-en-aws'
+    },
+    {
       id: '1',
       slug: 'taller-aws-sdk-for-dotnet',
       title: 'Taller: C#/.NET + AWS SDK for .NET',
