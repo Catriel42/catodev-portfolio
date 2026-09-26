@@ -151,3 +151,8 @@ body.slide-deck-active main {
   padding: 0 !important;
   max-width: none !important;
 }
+
+body.slide-deck-active {
+  overflow: hidden !important;
+  height: 100% !important;
+}

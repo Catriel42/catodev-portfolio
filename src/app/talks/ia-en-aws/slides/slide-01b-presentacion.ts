@@ -318,7 +318,22 @@ import { LucideGraduationCap, LucideMic } from '@lucide/angular';
     .fun-fact-text strong {
       color: var(--fg);
     }
+
+    @media (max-width: 640px) {
+      .fun-fact-bar {
+        padding: 0.75rem 1rem;
+        gap: 0.75rem;
+      }
+      .fun-fact-icon {
+        width: 2.1rem;
+        height: 2.1rem;
+      }
+      .fun-fact-text {
+        font-size: 0.86rem;
+      }
+    }
   `],
 })
 export class SlidePresentacion {}
+
 

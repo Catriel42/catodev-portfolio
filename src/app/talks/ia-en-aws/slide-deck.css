@@ -406,3 +406,98 @@
   color: #E2E8F0;
   overflow-x: auto;
 }
+
+/* ── Mobile Responsive Optimizations (< 768px) ── */
+@media (max-width: 768px) {
+  .slide {
+    justify-content: flex-start;
+    padding: 1.25rem 1rem;
+    padding-top: 4.5rem;
+    padding-bottom: 6rem;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+  }
+
+  .slide > * {
+    min-height: auto !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+  }
+
+  .slide h1,
+  ::ng-deep .slide-deck .main-heading,
+  ::ng-deep .slide-deck .cierre-title {
+    font-size: clamp(1.8rem, 6.5vw, 2.5rem) !important;
+    line-height: 1.15 !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .slide h2,
+  ::ng-deep .slide-deck .title,
+  ::ng-deep .slide-deck .section-heading {
+    font-size: clamp(1.35rem, 5vw, 1.85rem) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.65rem !important;
+  }
+
+  .slide p,
+  ::ng-deep .slide-deck .subtitle,
+  ::ng-deep .slide-deck .lead-text {
+    font-size: clamp(0.92rem, 3.6vw, 1.05rem) !important;
+    line-height: 1.5 !important;
+  }
+
+  .slide-two-cols,
+  ::ng-deep .slide-deck .slide-two-cols {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  .slide-card,
+  ::ng-deep .slide-deck .slide-card,
+  ::ng-deep .slide-deck .profile-card,
+  ::ng-deep .slide-deck .card {
+    padding: 1.25rem !important;
+    border-radius: 16px !important;
+  }
+
+  .code-terminal pre,
+  ::ng-deep .slide-deck .code-terminal pre {
+    padding: 0.85rem 1rem !important;
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+    padding-top: 4.25rem;
+    padding-bottom: 5.5rem;
+  }
+
+  .slide-nav {
+    bottom: 0.75rem;
+    gap: 0.45rem;
+    padding: 0.35rem 0.6rem;
+  }
+
+  .slide-nav button,
+  .nav-home-btn {
+    width: 2.15rem;
+    height: 2.15rem;
+  }
+
+  .slide-counter {
+    font-size: 0.75rem;
+    padding: 0 0.25rem;
+  }
+
+  .slide-back-home {
+    top: 0.85rem;
+    left: 0.85rem;
+    padding: 0.3rem 0.65rem;
+    font-size: 0.75rem;
+  }
+}

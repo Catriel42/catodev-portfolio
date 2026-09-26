@@ -336,6 +336,37 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideGraduationCap } from '@l
       font-size: 0.88rem;
       color: var(--fg-muted);
     }
+
+    @media (max-width: 640px) {
+      .qr-card {
+        padding: 1.5rem 1rem;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+      }
+
+      .qr-frame {
+        width: min(240px, 75vw);
+        height: min(240px, 75vw);
+        padding: 0.85rem;
+      }
+
+      .link-card {
+        padding: 0.85rem 1.15rem;
+        gap: 0.9rem;
+      }
+
+      .link-icon-box {
+        width: 2.85rem;
+        height: 2.85rem;
+      }
+
+      .link-title {
+        font-size: 1.05rem;
+      }
+    }
   `],
 })
 export class SlideCierre {}
+

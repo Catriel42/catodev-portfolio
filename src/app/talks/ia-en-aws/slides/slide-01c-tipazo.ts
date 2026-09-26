@@ -56,7 +56,17 @@ import { Component } from '@angular/core';
       object-fit: cover;
       display: block;
     }
+
+    @media (max-width: 768px) {
+      .image-card {
+        height: auto;
+        max-height: 56vh;
+        width: min(88vw, 360px);
+        border-radius: 20px;
+      }
+    }
   `],
 })
 export class SlideTipazo {}
+
 
