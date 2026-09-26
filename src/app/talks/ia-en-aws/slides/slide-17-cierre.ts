@@ -11,7 +11,7 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
         <div class="left-col">
           <div class="pill-badge font-mono">CIERRE · Q&amp;A</div>
           <h1 class="cierre-title">¡Muchas gracias!</h1>
-          <p class="subtitle">¿Preguntas, ideas o desafíos en producción? Hablemos y construyamos juntos.</p>
+          <p class="subtitle">¿Preguntas?</p>
 
           <div class="links-container">
             <!-- Strands Docs -->
@@ -73,7 +73,7 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
 
             <div class="qr-info">
               <span class="qr-info-title font-sans">Escanea para acceder al material</span>
-              <span class="qr-info-sub font-mono">Slides interactivas · Repositorios · Demos</span>
+              <span class="qr-info-sub font-mono">Slides</span>
             </div>
           </div>
         </div>
@@ -91,14 +91,14 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
 
     .cierre-wrapper {
       width: 100%;
-      max-width: 1350px;
+      max-width: 1400px;
       margin: 0 auto;
     }
 
     .cierre-layout {
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: clamp(2rem, 4vw, 4rem);
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: clamp(2.5rem, 5vw, 4.5rem);
       align-items: center;
     }
 
@@ -111,31 +111,31 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
     .pill-badge {
       display: inline-flex;
       align-items: center;
-      padding: 0.35rem 0.95rem;
+      padding: 0.4rem 1rem;
       border-radius: 9999px;
       background: rgba(255, 153, 0, 0.12);
       border: 1px solid rgba(255, 153, 0, 0.35);
       color: var(--accent);
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       width: fit-content;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.85rem;
     }
 
     .cierre-title {
-      font-size: clamp(2.8rem, 5vw, 4.4rem);
+      font-size: clamp(3rem, 5.2vw, 4.6rem);
       font-weight: 800;
       line-height: 1.05;
       letter-spacing: -0.04em;
       color: var(--fg);
-      margin: 0 0 0.75rem 0;
+      margin: 0 0 0.85rem 0;
     }
 
     .subtitle {
-      font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+      font-size: clamp(1.25rem, 2vw, 1.55rem);
       color: var(--fg-muted);
-      margin: 0 0 2.25rem 0;
+      margin: 0 0 2rem 0;
       max-width: 55ch;
       line-height: 1.5;
     }
@@ -143,18 +143,18 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
     .links-container {
       display: flex;
       flex-direction: column;
-      gap: 1.15rem;
-      max-width: 650px;
+      gap: 1.25rem;
+      max-width: 680px;
     }
 
     .link-card {
       display: flex;
       align-items: center;
-      gap: 1.25rem;
-      padding: 1.15rem 1.5rem;
+      gap: 1.35rem;
+      padding: 1.25rem 1.65rem;
       background: var(--bg-surface);
       border: 1px solid var(--surface-border-bright);
-      border-radius: 16px;
+      border-radius: 18px;
       text-decoration: none;
       color: var(--fg);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
@@ -172,9 +172,9 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
     }
 
     .link-icon-box {
-      width: 3.2rem;
-      height: 3.2rem;
-      border-radius: 12px;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 14px;
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.1);
       display: flex;
@@ -190,14 +190,14 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
     }
 
     .link-icon {
-      width: 1.6rem;
-      height: 1.6rem;
+      width: 1.8rem;
+      height: 1.8rem;
     }
 
     .link-text-content {
       display: flex;
       flex-direction: column;
-      gap: 0.25rem;
+      gap: 0.3rem;
       flex-grow: 1;
       overflow: hidden;
     }
@@ -205,23 +205,23 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
     .link-header {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.85rem;
     }
 
     .link-title {
       font-weight: 700;
-      font-size: 1.15rem;
+      font-size: 1.22rem;
       color: var(--fg);
     }
 
     .link-tag {
-      font-size: 0.65rem;
+      font-size: 0.7rem;
       font-weight: 700;
       color: var(--fg-muted);
       letter-spacing: 0.08em;
       background: rgba(255, 255, 255, 0.05);
-      padding: 0.15rem 0.5rem;
-      border-radius: 4px;
+      padding: 0.2rem 0.6rem;
+      border-radius: 5px;
     }
 
     .highlight-tag {
@@ -230,7 +230,7 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
     }
 
     .link-url {
-      font-size: 0.85rem;
+      font-size: 0.92rem;
       color: var(--fg-muted);
       white-space: nowrap;
       overflow: hidden;
@@ -241,14 +241,14 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
     .qr-card {
       background: var(--bg-surface);
       border: 1px solid var(--surface-border-bright);
-      border-radius: 24px;
-      padding: clamp(2rem, 3.5vw, 2.75rem);
+      border-radius: 28px;
+      padding: clamp(2rem, 3.5vw, 3rem);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 1.5rem;
-      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 50px rgba(255, 153, 0, 0.12);
       position: relative;
     }
 
@@ -256,39 +256,38 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.3rem 0.85rem;
+      padding: 0.35rem 0.95rem;
       border-radius: 9999px;
       background: rgba(255, 153, 0, 0.1);
       border: 1px solid rgba(255, 153, 0, 0.3);
       color: var(--accent);
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 700;
       letter-spacing: 0.08em;
     }
 
     .qr-badge-icon {
-      width: 0.95rem;
-      height: 0.95rem;
+      width: 1.05rem;
+      height: 1.05rem;
     }
 
     .qr-frame {
-      width: 220px;
-      height: 220px;
+      width: clamp(280px, 22vw, 340px);
+      height: clamp(280px, 22vw, 340px);
       background: #FFFFFF;
       border: 2px solid rgba(255, 153, 0, 0.4);
-      border-radius: 20px;
+      border-radius: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0.85rem;
-      box-shadow: 0 0 32px rgba(255, 153, 0, 0.15), 0 16px 40px rgba(0, 0, 0, 0.5);
+      padding: 1.1rem;
+      box-shadow: 0 0 36px rgba(255, 153, 0, 0.2), 0 16px 40px rgba(0, 0, 0, 0.5);
     }
 
     .qr-img {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      image-rendering: pixelated;
     }
 
     .qr-info {
@@ -296,17 +295,17 @@ import { LucideBookOpen, LucideCode, LucideGlobe, LucideSparkles } from '@lucide
       flex-direction: column;
       align-items: center;
       text-align: center;
-      gap: 0.35rem;
+      gap: 0.4rem;
     }
 
     .qr-info-title {
-      font-size: 1.05rem;
+      font-size: 1.15rem;
       font-weight: 700;
       color: var(--fg);
     }
 
     .qr-info-sub {
-      font-size: 0.82rem;
+      font-size: 0.88rem;
       color: var(--fg-muted);
     }
   `],
